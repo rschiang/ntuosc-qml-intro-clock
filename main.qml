@@ -46,8 +46,8 @@ Rectangle {
             maskSource: mask
             
             visible: (x != 0 || y != 0)
-            x: clock.radius +  (clock.radius - radius) * Math.cos((6.0 * clock.second - 90.0) / 360.0 * 2 * Math.PI) - radius
-            y: clock.radius +  (clock.radius - radius) * Math.sin((6.0 * clock.second - 90.0) / 360.0 * 2 * Math.PI) - radius
+            x: clock.radius + (clock.radius - radius) * Math.cos((6.0 * clock.second - 90.0) / 360.0 * 2 * Math.PI) - radius
+            y: clock.radius + (clock.radius - radius) * Math.sin((6.0 * clock.second - 90.0) / 360.0 * 2 * Math.PI) - radius
             z: 1
             
             Behavior on x {
