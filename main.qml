@@ -76,8 +76,20 @@ Window {
         anchors.centerIn: clock
         text: (clock.hour > 12 ? clock.hour - 12 : clock.hour) + ":" + (clock.minute < 10 ? "0" + clock.minute : clock.minute)
         font.family: "Roboto"
-        font.pixelSize: 84
+        font.pointSize: 84
         font.weight: Font.Bold
+        color: "#fff"
+    }
+
+    Text {
+        id: creditLabel
+        anchors {
+            top: label.bottom
+            horizontalCenter: label.horizontalCenter
+        }
+        text: "臺灣大學開源社"
+        font.family: "Source Han Sans TC"
+        font.pointSize: 24
         color: "#fff"
     }
     
