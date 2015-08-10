@@ -9,7 +9,7 @@ Rectangle {
         id: wheel
         width: 56
         height: 56
-        source: "kmt.jpg"
+        source: "kmt.png"
         fillMode: Image.PreserveAspectCrop
         visible: false
      }
