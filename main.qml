@@ -9,15 +9,15 @@ Window {
     height: 600
     visible: true
     
-    Image {
+    AnimatedImage {
         id: wheel
         width: radius * 2
         height: radius * 2
-        source: "kmt.png"
+        source: "slippy.gif"
         fillMode: Image.PreserveAspectCrop
         visible: false
 
-        property int radius: 28
+        property int radius: 64
      }
      
      Rectangle {
@@ -57,14 +57,14 @@ Window {
             
             Behavior on x {
                 NumberAnimation {
-                    easing.type: Easing.InBack
+                    easing.type: Easing.OutBack
                     duration: 200
                 }
             }
             
             Behavior on y {
                 NumberAnimation {
-                    easing.type: Easing.InBack
+                    easing.type: Easing.OutBack
                     duration: 200
                 }
             }

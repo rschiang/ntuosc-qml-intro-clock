@@ -1,6 +1,6 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>kmt.png</file>
+        <file>slippy.gif</file>
     </qresource>
 </RCC>
