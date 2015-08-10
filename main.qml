@@ -11,18 +11,20 @@ Window {
     
     Image {
         id: wheel
-        width: 56
-        height: 56
+        width: radius * 2
+        height: radius * 2
         source: "kmt.png"
         fillMode: Image.PreserveAspectCrop
         visible: false
+
+        property int radius: 28
      }
      
      Rectangle {
          id: mask
-         width: 56
-         height: 56
-         radius: 28
+         width: wheel.width
+         height: wheel.height
+         radius: wheel.radius
          color: "#000"
          visible: false
      }
@@ -42,16 +44,15 @@ Window {
         
         OpacityMask {
             id: secondCircle
-            width: 56
-            height: 56
-            property int radius: 28
-            
+            width: wheel.width
+            height: wheel.height
+
             source: wheel
             maskSource: mask
             
             visible: (x != 0 || y != 0)
-            x: clock.radius + (clock.radius - radius) * Math.cos((6.0 * clock.second - 90.0) / 360.0 * 2 * Math.PI) - radius
-            y: clock.radius + (clock.radius - radius) * Math.sin((6.0 * clock.second - 90.0) / 360.0 * 2 * Math.PI) - radius
+            x: clock.radius + (clock.radius - wheel.radius) * Math.cos((6.0 * clock.second - 90.0) / 360.0 * 2 * Math.PI) - wheel.radius
+            y: clock.radius + (clock.radius - wheel.radius) * Math.sin((6.0 * clock.second - 90.0) / 360.0 * 2 * Math.PI) - wheel.radius
             z: 1
             
             Behavior on x {
@@ -74,7 +75,7 @@ Window {
         id: label
         anchors.centerIn: clock
         text: (clock.hour > 12 ? clock.hour - 12 : clock.hour) + ":" + (clock.minute < 10 ? "0" + clock.minute : clock.minute)
-        font.family: "Capitals"
+        font.family: "Roboto"
         font.pixelSize: 84
         font.weight: Font.Bold
         color: "#fff"
