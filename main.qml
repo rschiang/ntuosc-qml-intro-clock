@@ -1,9 +1,13 @@
 import QtQuick 2.0
+import QtQuick.Window 2.0
 import QtGraphicalEffects 1.0
 
-Rectangle {
+Window {
     id: root
     color: "#689881"
+    width: 800
+    height: 600
+    visible: true
     
     Image {
         id: wheel
