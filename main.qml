@@ -92,6 +92,15 @@ Window {
         font.pointSize: 24
         color: "#fff"
     }
+
+    NumberAnimation {
+        id: minuteAnimation
+        target: label
+        property: "opacity"
+        from: 0.7; to: 1
+        duration: 1000
+        easing.type: Easing.OutExpo
+    }
     
     Timer {
         id: timer
@@ -103,6 +112,9 @@ Window {
             clock.hour = date.getHours()
             clock.minute = date.getMinutes()
             clock.second = date.getSeconds()
+
+            if (clock.second == 0)
+                minuteAnimation.start()
         }
     }
     
